@@ -16,10 +16,12 @@ client.on('ready', () => {
 client.on('messageCreate', (message) => {
     if (message.author.bot) return;
 
+    // Si message contient une image
     if (message.attachments.size > 0) {
         const attachment = message.attachments.first();
 
-        message.reply(`🔗 Lien Discord : ${attachment.url}`);
+        // IMPORTANT : < > empêche l’aperçu image Discord
+        message.reply(`🔗 Lien de l'image : <${attachment.url}>`);
     }
 });
 
