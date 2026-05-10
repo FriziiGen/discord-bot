@@ -19,7 +19,7 @@ client.on('messageCreate', async (message) => {
     if (message.attachments.size > 0) {
         const attachment = message.attachments.first();
 
-        // Envoie uniquement le lien sans preview image
+        // Envoie UNIQUEMENT le lien
         await message.reply(`<${attachment.url}>`);
     }
 });
